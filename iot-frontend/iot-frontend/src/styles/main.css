@@ -1,0 +1,197 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Dashboard container */
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form row styles */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-row input,
+.form-row select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.form-row button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-row button:hover {
+  background-color: #1b5e20;
+}
+
+/* Filter row */
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-row input,
+.filter-row select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 180px;
+}
+
+/* Table wrapper */
+.table-container {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+/* Table styles */
+.device-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.device-table th,
+.device-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.device-table th {
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.device-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Status-specific colors */
+.status-active {
+  color: green;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: red;
+  font-weight: bold;
+}
+
+/* Empty state */
+.device-table td[colspan="4"],
+.device-table td[colspan="5"] {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  color: #777;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn,
+.toggle-btn,
+.cancel-btn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #1976d2;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #1565c0;
+}
+
+.delete-btn {
+  background-color: #d72020;
+  color: white;
+  margin-left: 6px;
+}
+
+.delete-btn:hover {
+  background-color: #b71c1c;
+}
+
+.toggle-btn {
+  background-color: #1976d2;
+  color: white;
+  margin-left: 8px;
+}
+
+.toggle-btn:hover {
+  background-color: #145ca6;
+}
+
+.cancel-btn {
+  background-color: #9e9e9e;
+  color: white;
+  margin-left: 6px;
+}
+
+.cancel-btn:hover {
+  background-color: #757575;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .form-row,
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row button,
+  .filter-row input,
+  .filter-row select {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

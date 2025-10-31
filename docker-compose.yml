@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./IoTdevicebackend/IoTdevicebackend
+    container_name: iot-backend
+    ports:
+      - "9090:9090"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/iot_db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      - db
+
+  frontend:
+    build: ./iot-frontend/iot-frontend
+    container_name: iot-frontend
+    ports:
+      - "3030:80"
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: iot_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+volumes:
+  mysql_data:
+
