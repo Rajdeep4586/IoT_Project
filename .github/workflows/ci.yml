@@ -55,7 +55,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./iot-frontend
+        working-directory: iot-frontend/iot-frontend
 
       - name: Build Frontend
         run: npm run build
