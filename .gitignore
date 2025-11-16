@@ -1,0 +1,8 @@
+Breakdown_of_Project.docx
+Pre-requisites_documentation.docx
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+

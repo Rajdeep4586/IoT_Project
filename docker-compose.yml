@@ -7,9 +7,9 @@ services:
     ports:
       - "9090:9090"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/iot_db
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/iot_db?useSSL=false&verifyServerCertificate=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: rajdeep_@1234     # FIXED
     depends_on:
       - db
 
@@ -26,7 +26,7 @@ services:
     container_name: mysql-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: rajdeep_@1234
       MYSQL_DATABASE: iot_db
     volumes:
       - mysql_data:/var/lib/mysql
